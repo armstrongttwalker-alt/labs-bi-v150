@@ -1,9 +1,16 @@
 #!/bin/bash
-# setup_server.sh - Setup script for vLLM inference service on BI-V150
+# setup_server.sh - Setup script for vLLM inference service on Iluvatar BI-V150
 
 echo "======================================================"
 echo "  LLM Deployment Lab - Server Setup"
+echo "  Hardware: Iluvatar BI-V150"
 echo "======================================================"
+
+# Step 0: Check GPU
+echo ""
+echo "Step 0: Checking GPU..."
+ixsmi 2>/dev/null || echo "ixsmi not found, trying nvidia-smi..."
+nvidia-smi 2>/dev/null || echo "GPU status tools not available"
 
 # Step 1: Check if model path is provided
 MODEL_PATH="${1:-/mnt/share/user_homes/models/Qwen3-4B}"

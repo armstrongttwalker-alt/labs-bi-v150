@@ -5,8 +5,12 @@ Verify that everything in the lab environment is working before we start.
 Run this first. If it all passes, you are ready for the rest of the lab.
 
 (No coding required in this file -- it is just a smoke test.)
+
+Hardware: Iluvatar BI-V150
+Driver: IX-ML 4.4.0
 """
 import sys
+import subprocess
 
 
 def section(title):
@@ -31,6 +35,23 @@ py_ok = sys.version_info[:2] >= (3, 9) and sys.version_info[:2] <= (3, 11)
 check("Python 3.9-3.11", py_ok, sys.version.split()[0])
 
 # -----------------------------------------------------------
+section("Hardware: Iluvatar BI-V150")
+# -----------------------------------------------------------
+try:
+    result = subprocess.run(["ixsmi"], capture_output=True, text=True, timeout=5)
+    if result.returncode == 0:
+        lines = result.stdout.split('\n')
+        for line in lines:
+            if "BI-V150" in line or "Iluvatar" in line:
+                check("GPU detected", True, "Iluvatar BI-V150")
+                break
+        check("ixsmi available", True, "IX-ML driver")
+    else:
+        check("ixsmi available", False, "run ixsmi manually")
+except Exception:
+    check("ixsmi check", False, "subprocess error")
+
+# -----------------------------------------------------------
 section("PyTorch and CUDA")
 # -----------------------------------------------------------
 import torch
@@ -40,7 +61,8 @@ check("CUDA available", torch.cuda.is_available())
 n = torch.cuda.device_count()
 check("CUDA device count", n >= 1, f"{n} device(s)")
 if n >= 1:
-    check("Device name", True, torch.cuda.get_device_name(0))
+    device_name = torch.cuda.get_device_name(0)
+    check("Device name", True, device_name)
 
 # -----------------------------------------------------------
 section("Triton")

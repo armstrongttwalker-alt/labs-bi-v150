@@ -1,4 +1,4 @@
-# Lab Day 3: LLM Deployment on BI-V150
+# Lab Day 3: LLM Deployment on Iluvatar BI-V150
 
 **Course:** Software and Hardware Foundations of Intelligent Computing Systems
 **Duration:** 2 hours
@@ -10,10 +10,26 @@
 
 By the end of this lab, you will be able to:
 
-1. Set up an LLM inference service using vLLM with FlagGems backend
-2. Understand the software stack for LLM deployment on BI-V150
+1. Set up an LLM inference service using vLLM with FlagGems backend on Iluvatar BI-V150
+2. Understand the software stack for LLM deployment
 3. Use the OpenAI-compatible API to interact with local models
 4. Implement multi-turn conversation with context management
+
+---
+
+## Hardware Environment
+
+| Component   | Specification      |
+|-------------|-------------------|
+| GPU         | Iluvatar BI-V150  |
+| Memory      | 32 GB HBM         |
+| Driver      | IX-ML 4.4.0       |
+| CUDA API    | 10.2 compatible   |
+
+Check your GPU:
+```bash
+ixsmi
+```
 
 ---
 

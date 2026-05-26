@@ -72,7 +72,9 @@ Identical to Day 1:
 
 | Component       | Version           |
 |-----------------|-------------------|
-| Hardware        | BI-V150 (TianShu) |
+| Hardware        | Iluvatar BI-V150 (32 GB HBM) |
+| Driver          | IX-ML 4.4.0       |
+| CUDA Version    | 10.2              |
 | PyTorch         | 2.2.0+            |
 | Triton          | 2.2.0+            |
 | FlagGems        | Latest            |

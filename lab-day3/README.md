@@ -1,8 +1,8 @@
-# FlagGems-Triton Lab Day 3: LLM Deployment
+# FlagGems-Triton Lab Day 3: LLM Deployment on Iluvatar BI-V150
 
 Hands-on lab for the China-Africa AI Compute Faculty Development Program.
 
-Day 3 focuses on deploying and serving large language models (LLMs) locally. Building on Days 1-2, which covered GPU programming and performance optimization, today you will learn to deploy an LLM inference service and interact with it.
+Day 3 focuses on deploying and serving large language models (LLMs) locally on Iluvatar BI-V150. Building on Days 1-2, which covered GPU programming and performance optimization, today you will learn to deploy an LLM inference service and interact with it.
 
 ---
 

@@ -42,14 +42,21 @@ tutorial source. The portability claim is *source-level*.
 
 | Component   | Version          | Notes |
 |-------------|------------------|-------|
-| Hardware    | BI-V150 (TianShu) | AI accelerator |
+| Hardware    | Iluvatar BI-V150 | 32 GB HBM AI accelerator |
+| Driver      | IX-ML 4.4.0      | Iluvatar driver stack |
+| CUDA API    | 10.2 compatible  | Standard PyTorch device interface |
 | PyTorch     | 2.2.0+           | Standard PyTorch |
 | Triton      | 2.2.0+           | OpenAI Triton |
 | FlagGems    | Latest           | Triton-based operator library |
 
 **Key idea:** FlagGems provides optimized Triton implementations of
 PyTorch operators. You can use standard PyTorch CUDA code and FlagGems
-will handle the backend.
+will handle the backend for Iluvatar BI-V150.
+
+**Check your GPU:**
+```bash
+ixsmi  # Iluvatar GPU status
+```
 
 ---
 

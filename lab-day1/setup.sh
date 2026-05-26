@@ -4,7 +4,11 @@
 
 echo "======================================================"
 echo "  FlagGems-Triton Lab Day 1 - Environment"
+echo "  Hardware: Iluvatar BI-V150"
 echo "======================================================"
+
+# Check GPU status
+ixsmi 2>/dev/null || nvidia-smi 2>/dev/null || echo "GPU info not available"
 
 python - <<'PY'
 import torch

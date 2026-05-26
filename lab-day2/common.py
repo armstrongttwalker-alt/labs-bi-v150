@@ -3,6 +3,9 @@ common.py
 ---------
 Shared Triton matmul kernel and helpers used across Day 2 steps.
 
+Hardware: Iluvatar BI-V150 (32 GB HBM)
+Driver: IX-ML 4.4.0
+
 This is the reference baseline from Day 1 (04_matmul_compare.py) with all
 TODO blocks filled in. Every step in Day 2 either uses this kernel as-is
 (00, 03) or defines a small variant of it (01, 02). Keeping one canonical

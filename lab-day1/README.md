@@ -61,8 +61,9 @@ This lab assumes an environment with:
 
 | Component       | Version           |
 |-----------------|-------------------|
-| Hardware        | BI-V150 (TianShu AI accelerator) |
-| CPU architecture | x86_64 or aarch64 |
+| Hardware        | Iluvatar BI-V150 (32 GB HBM) |
+| Driver          | IX-ML 4.4.0       |
+| CUDA Version    | 10.2              |
 | PyTorch         | 2.2.0+            |
 | Triton          | 2.2.0+            |
 | FlagGems        | Latest (from source) |
